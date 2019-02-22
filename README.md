@@ -444,6 +444,37 @@ Using Access Key ID and Secret Access Key – can be used only via accessing pro
 
 # AWS Object Storage & CDN – S3, Glacier and CloudFront
 
+### S3 points from practice questions
+
+- S3 bucket properties - versioning, server access logging, object access logging, tags, transfer acceleration, events
+- *Important* - storage class is defined on object level NOT on bucket level
+- S3 automatically scales to high request rate. Your application can achieve 3500 PUT/POST/DELETE and 5000 GET requests per second per prefix in a bucket. If the request rate is more than that then prefixing might help not below it.
+- S3 object level actions can be tracked by CloudTrail logging. CloudTrail is enabled on your AWS account when you create the account. When supported event activity occurs in Amazon S3, that activity is recorded in a CloudTrail event along with other AWS service events in Event history.
+- Amazon S3 CloudWatch Request Metrics will get only number of requests. They will not have any other information on the requests. For detailed information on requests CloudTrail can be used
+
+- S3 bucket objects contain 2 type of meta-data, system meta-data and user
+See - https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-metadata
+
+- To configure your bucket to allow cross-origin requests, you create a CORS configuration, which is an XML document with rules that identify the origins that you will allow to access your bucket, the operations (HTTP methods) that will support for each origin, and other operation-specific information.
+
+- If your bucket is named “akmalstestbucket” and is in us-west-1 , you can access the bucket programatically in two ways - 
+https://akmalstestbucket.s3-us-west-1.amazonaws.com
+https://s3-us-west-1.amazonaws.com/akmalstestbucket
+
+- Min and max file size allowed in S3 - 0 bytes to 5 TB
+- Transfer accelaration fetaure on s3 buckets uses AWS edge locations to improve upload and dowload speeds
+
+- Storage classes
+    STANDARD
+    REDUCED_REDUNDANCY
+    INTELLIGENT_TIERING
+    STANDARD_IA
+    ONEZONE_IA
+    GLACIER
+
+
+
+
 ## S3 101
 
 ### S3 Object Storage Classes
